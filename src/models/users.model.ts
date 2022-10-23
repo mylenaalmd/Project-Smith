@@ -12,7 +12,7 @@ export default class UserModel {
     const { username, classe, level, password } = newUser;
     await this.connection.execute<ResultSetHeader>(
       'INSERT INTO Trybesmith.Users (username, classe, level, password) VALUES (?, ?, ?, ?);',
-      [username, classe, level, password]
+      [username, classe, level, password],
     );
   }
 }

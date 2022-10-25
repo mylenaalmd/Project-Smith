@@ -16,7 +16,7 @@ export = (
     const decoded = jwt.verify(token, JWT_SECRET as Secret);
     req.cookies = decoded;
     return next();
-  } catch (e) {
-    return res.status(422).json({ message: 'Invalid token' });
+  } catch (err) {
+    return res.status(401).json({ message: 'Invalid token' });
   }
 };

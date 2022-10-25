@@ -15,7 +15,7 @@ export default class ProductService {
     return insertOrder;
   }
 
-  async addOrder(productsIds: number[], userId: number): Promise<IOrder> {
+  public async addOrder(productsIds: number[], userId: number): Promise<IOrder> {
     const product = new ProductModel(connection);
     const insertProduct = await this.model.addOrder(userId);
 
